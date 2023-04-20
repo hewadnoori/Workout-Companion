@@ -1,14 +1,13 @@
 <template>
-    <div>
-     <UserExercise :userId="userId"/>
-     <UserCreateExercise :userId="userId" @exercise-created="refreshExercises"/>
-    </div>
+  <div>
+    <UserExercise :userId="parsedUserId"/>
+    <UserCreateExercise :userId="parsedUserId" @exercise-created="refreshExercises"/>
+  </div>
 </template>
 
 <script>
 import UserExercise from '../components/UserExercise.vue';
 import UserCreateExercise from '../components/UserCreateExercise.vue';
-
 
 export default {
   name: "UserExercises",
@@ -18,15 +17,19 @@ export default {
   },
   props: {
     userId: {
-      type: Number, 
+      type: [Number, String], // Allow both Number and String types
       required: true,
     }
   },
+  computed: {
+    parsedUserId() {
+      return parseInt(this.userId);
+    }
+  },
   methods: {
-    refreshExercises(){
+    refreshExercises() {
       this.$refs.UserExercise.refreshExercises();
     }
   }
-}
+};
 </script>
-

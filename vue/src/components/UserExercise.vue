@@ -3,14 +3,17 @@
     <div class="update-title">
       <h3>Your Exercises</h3>
     </div>
-      <div class="form">
-        <form @submit.prevent="submitForm" class="box">
-        <label> Select a Date </label>
-        <input type="date" v-model="checkIn"/>
-      </form>
-      </div>
-      
-      <button type="submit"> Generate Report </button>
+    <!-- <div class="form">
+      <form @submit.prevent="submitForm" >
+        <div class="box">
+          <label> Select a Date </label>
+          <input type="date" v-model="checkIn"/>
+        </div>
+        
+        <button type="submit"> Generate Report </button>
+      </form> -->
+    <!-- </div> -->
+    
     <div v-if="exercises.length > 0" class="list">
       <ul>
         <li v-for="exercise in exercises" :key="exercise.id">
@@ -57,6 +60,7 @@ export default {
     submitForm() {
       exerciseService.getExercisesByDateAndUserId(this.checkIn, this.userId).then(response => {
         this.exercises = response.data;
+        console.log("work");
       })
     }
   },
@@ -72,6 +76,7 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  
 }
 .update-title {
   display: flex;
@@ -81,23 +86,26 @@ export default {
   margin-bottom:10px;
   width: 100%;
 }
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
 .form{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background-color: white;
-  margin-bottom: 10px;
-  width: 95%;
-  border-radius: 5px;
+  width: 100%;
 }
 .box{
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 10px;
-  padding-left: 20px;
+
   border-radius: 5px;
-  width: 95%;
+  width: 100%;
 }
 button{
   background-color: red;
@@ -107,7 +115,7 @@ button{
   border:none;
   color: white;
   font-size: large ;
-  margin-bottom: 10px;
+  margin: 10px 0px;
 }
 input{
   width: 60%;
@@ -120,17 +128,47 @@ input{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  justify-content: center;
   width: 95%;
   border-radius: 5px;
   margin-bottom:10px;
 }
 ul{
   list-style-type: none;
-  padding: 10px;
-  width: 95%;
-   
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+li{
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+li div{
+  
+  padding-left: 20px;
+}
+label{
+  padding: 20px;
+}
+input{
+  margin-right:20px;
 }
 
+@media screen and (min-width: 768px) {
+  .update-title{
+    justify-content: start;
+    position: fixed;
+  }
+  h3{
+    padding-left: 20px;
+  }
+  .list{
+    margin-top: 80px;
+  }
+}
 
 </style>

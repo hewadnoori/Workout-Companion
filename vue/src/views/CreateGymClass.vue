@@ -164,7 +164,17 @@ label{
 }
 
 @media screen and (min-width: 768px) {
-  
+  .title{
+    justify-content: start;
+    position:fixed;
+  }
+  h3{
+    padding-left: 20px;
+  }
+  form{
+    
+    margin-top: 70px;
+  }
 }
 
 

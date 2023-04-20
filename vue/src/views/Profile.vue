@@ -210,7 +210,7 @@ export default {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgb(37, 34, 34);
   align-items: center;
-  position: fixed;
+
   top: 0;
   left: 0;
 }
@@ -232,7 +232,7 @@ export default {
   margin-bottom: 90px;
   border-radius: 5px;
   width: 95%;
-  margin-top: 80px;
+  
 }
 .table1, .table2{
   display: flex;
@@ -300,13 +300,24 @@ textarea{
   border: 1px solid #ccc;
 }
 @media screen and (min-width: 768px) {
+  h3{
+    padding-left: 20px !important;
+  }
+  .title{
+    justify-content: start;
+      position: fixed;
+  }
   .title button{
-  position: relative;
-  margin-right: 200px;
-  height: 100%;
-  border-radius: 20px;
-  height: 50px;
-}
+  
+  padding: 0;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  }
+  profile{
+    margin-top: 80px;
+  }
+
 
 }
 

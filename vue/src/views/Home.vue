@@ -17,22 +17,21 @@
     <div v-if="user && workoutStarted" class="end-buttons">
       <!-- <h2>Welcome, {{ this.name }} !</h2> -->
       <div>
-        <router-link :to = "{name:'UserExercises', params: {userId:user.id}}" tag = button class = "exercise-view-button">
-          View Exercises 
-          <img src="../img/viewexercisesimg.jpg" alt="view exercises">
-        </router-link>
+        <router-link :to="{name:'UserExercises', params: {userId: user.id}}" tag=button class="exercise-view-button">
+        View Exercises 
+        <img src="../img/viewexercisesimg.jpg" alt="view exercises">
+      </router-link>
       </div>
         <router-link :to = "{name:'UpcomingGymClassesView'}" tag = button class = "upcoming-gym-classes">
             Upcoming Classes 
             <img src="../img/upcomingclassimg.jpg" alt="upcoming classes">
         </router-link>
-        <div v-if="user.authorities[0].name === 'ROLE_ADMIN'">
+    </div>
+    <div v-if="user.authorities[0].name === 'ROLE_ADMIN'">
           <router-link :to = "{name:'MachineMetrics'}" tag = button class = "machine-metrics">
             Machine Metrics
             <img src="../img/machinemetricsimg.jpg" alt="machine metrics">
           </router-link>
-        </div>
-      
     </div>
     
   </div>
@@ -131,18 +130,7 @@ export default {
   box-sizing: border-box;
   padding-bottom: 75px;
 }
-.nav  {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  background-color: white;
-  width: 100%;
-  height: 58px;
-  overflow: hidden;
 
-}
 button{
   background-color: #020002
 ; /* Green */
@@ -173,19 +161,21 @@ button img {
 }
 
 .end-buttons{
-  padding-bottom: 90px; 
+   
 }
 
 .exercise-view-button img{
-  top: 179px;
+  top: 348px;
+  
   height: 155px;
 }
 .upcoming-gym-classes img{
-  top: 348px;
+  top: 515px;
+  
   height: 155px;
 }
 .machine-metrics img{
-  top: 515px;
+  top: 179px;
   height: 155px;
 }
 .end-workout-btn img{
@@ -206,13 +196,29 @@ button img{
   height: 154px;
 }
 .exercise-view-button img{
-  top: 238px;
+  top: 574px;
+  
 }
 .upcoming-gym-classes img{
   top: 407px;
 }
 .machine-metrics img{
-  top: 574px;
+  top: 238px;
+}
+.machine-metrics{
+  margin-bottom: 20px;
+}
+.nav  {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white;
+  width: 100%;
+  height: 58px;
+  overflow: hidden;
+
 }
 }
 </style>

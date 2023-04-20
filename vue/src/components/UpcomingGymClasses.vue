@@ -97,4 +97,16 @@ ul{
 li div{
   padding: 5px;
 }
+@media screen and (min-width: 768px) {
+  .update-title{
+    justify-content: start;
+    position: fixed;
+  }
+  h3{
+    padding-left: 20px;
+  }
+  .form{
+    margin-top:80px;
+  }
+}
 </style>

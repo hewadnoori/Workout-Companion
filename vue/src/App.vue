@@ -4,7 +4,7 @@
       <button class="menu-btn" @click="toggleMenu">
         <font-awesome-icon icon="bars" class="icon" />
       </button>
-      <div class="menu" v-show="menuVisible">
+      <div class="menu" v-show="menuVisible || isMobile">
         <router-link class="ehh" v-bind:to="{ name: 'home' }">
           <div class="control active-btn" data-id="home">
             <div class="eh">
@@ -65,6 +65,9 @@ export default {
   },
   computed: {
     ...mapState(['user']),
+    isMobile() {
+      return window.innerWidth <= 768;
+    },
   },
   methods: {
     toggleMenu() {
@@ -160,51 +163,36 @@ bottom: 0;
 
 /*** PHONE DISPLAY ****/
 
-@media (max-width: 768px) {
 
-  .app {
-    background-color: #f7f7f7 ;
-width: 100%;
-top: 0;
-left:0;
-right: 0;
-bottom: 0;
+@media (max-width: 768px) {
+.menu-btn {
+  display: none;
 }
-span {
-  color:black
-}
+
 .controlls {
- 
-  position: fixed;
-    
-    top: auto;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    transition: all .4s ease-in-out;
-    background-color: #f7f7f7;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
 }
 .ehh{
-  width: calc(100% / 4);
+  width: 100%;
+  height:80px;
 }
-.control {
-   
-    margin: .5rem 0;
-    cursor: pointer;
-    width: 100%;
-    height: 55px;
-    /* border-radius: 15%; */
-    display: flex;
-    justify-content: center;
-    
-    box-sizing: border-box;
-    font-size: 15px;
- 
-  }
+.control{
+  height: 100%;
+}
+
+.menu {
+  display: flex; /* Add this line to show the menu */
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  right: 0;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  
+  background-color: white;
+}
 }
 </style>

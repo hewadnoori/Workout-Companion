@@ -310,4 +310,5 @@ align-items: center;
   width: 10vh;
   text-align: center;
 }
+
 </style>

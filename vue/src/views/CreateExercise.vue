@@ -141,5 +141,17 @@ select{
   padding: 10px;
   margin-right: 20px;
 }
+@media screen and (min-width: 768px) {
 
+  h3{
+    text-align: start;
+    padding-left: 20px;
+  }
+  .title{
+    position: fixed;
+  }
+  .input{
+    margin-top: 70px;
+  }
+}
 </style>

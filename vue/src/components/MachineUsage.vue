@@ -172,6 +172,7 @@ select{
   width: 60%;
   border: none;
   margin-right: 20px;
+  padding: 10px;
 }
 .report{
   display: flex;
@@ -191,5 +192,17 @@ ul{
 }
 li div{
   padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .update-title{
+    justify-content: start;
+    position: fixed;
+  }
+  h3{
+    padding-left: 20px;
+  }
+  .section{
+    margin-top:80px;
+  }
 }
 </style>
