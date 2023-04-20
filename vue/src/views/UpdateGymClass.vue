@@ -66,7 +66,7 @@
         </thead>
       </div>
       <div class="data">
-        <tbody class="2">
+        <tbody class="tbody2">
         <div class="eee">
           <tr class="main2" v-for="gymClass in allGymClasses" :key="gymClass.classId">
             <div class="h">
@@ -227,13 +227,10 @@ label{
 }
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 95%;
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 5px  25px rgba(0,0,0,.5);
-  transition: all .6s ease-in-out;
   margin-bottom:90px;
 }
 .input {
@@ -245,20 +242,34 @@ table {
   align-items: center;
   
 }
-
-
+.tbody2{
+  width: 100%;
+}
+.main2:nth-child(2n){
+  background-color: #ebebeb;
+}
+.id{
+  text-align: center !important;
+}
 tr.main {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  color: white;
   
-  border: 2px solid #715f45;
-  border-radius: 5px;
-  transition: all .6s ease-in-out;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+thead{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .headtitle {
+  background-color: #eb6151 ;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -277,7 +288,6 @@ align-items: center;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
-  transition: all .6s ease-in-out;
   font-family: 'Times New Roman', Times, serif
  
 }
@@ -286,7 +296,6 @@ align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  border: 2px solid #715f45;
   border-radius: 5px;
 }
 
@@ -310,5 +319,32 @@ align-items: center;
   width: 10vh;
   text-align: center;
 }
-
+@media screen and (max-width: 768px) {
+  thead{
+    padding:10px 0px;
+  }
+  table{
+    width:100%;
+  }
+  .id {
+    width: 10vh;
+    text-align: start;  
+  }
+  .class {
+    width: 30vh;
+    text-align: center;
+  }
+  .date {
+    width: 30vh;
+    text-align: center;
+  }
+  .time {
+    width: 30vh;
+    text-align: center;
+  }
+  .sign {
+    width: 10vh;
+    text-align: center;
+  }
+}
 </style>

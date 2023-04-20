@@ -21,7 +21,7 @@
         </li>
       </ul>
     </div>
-    <div v-else>
+    <div v-else class="none">
       <p>No upcoming gym classes found.</p>
     </div>
   </div>
@@ -107,6 +107,17 @@ li div{
   }
   .form{
     margin-top:80px;
+  }
+  .none{
+    margin-top: 80px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 10px;
+  
+  border-radius: 5px;
+  width: 95%;
   }
 }
 </style>
