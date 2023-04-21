@@ -1,11 +1,10 @@
 <template>
-
-  <div class="home" >
+  <div class="home">
     <div class="nav">
     </div>
     <div>
     </div>
-    <button id="start-workout"  v-if="!workoutStarted" @click="startWorkout" class="start-workout-btn">
+    <button id="start-workout" v-if="!workoutStarted" @click="startWorkout" class="start-workout-btn">
       Start Workout
       <img src="../img/startimg.jpg" alt="start image">
     </button>
@@ -13,27 +12,27 @@
       End Workout
       <img src="../img/endworkoutimg.jpg" alt="end image">
     </button>
-    
+
     <div v-if="user && workoutStarted" class="end-buttons">
       <!-- <h2>Welcome, {{ this.name }} !</h2> -->
       <div>
         <router-link :to="{name:'UserExercises', params: {userId: user.id}}" tag=button class="exercise-view-button">
-        View Exercises 
+        View Exercises
         <img src="../img/viewexercisesimg.jpg" alt="view exercises">
       </router-link>
       </div>
-        <router-link :to = "{name:'UpcomingGymClassesView'}" tag = button class = "upcoming-gym-classes">
-            Upcoming Classes 
+        <router-link :to="{name:'UpcomingGymClassesView'}" tag=button class="upcoming-gym-classes">
+            Upcoming Classes
             <img src="../img/upcomingclassimg.jpg" alt="upcoming classes">
         </router-link>
     </div>
-    <div v-if="user.authorities[0].name === 'ROLE_ADMIN'">
-          <router-link :to = "{name:'MachineMetrics'}" tag = button class = "machine-metrics">
-            Machine Metrics
-            <img src="../img/machinemetricsimg.jpg" alt="machine metrics">
-          </router-link>
+    <div v-if="user.authorities[0].name === 'ROLE_ADMIN'"
+         :class="{'start-workout-visible': !workoutStarted, 'end-workout-visible': workoutStarted}">
+      <router-link :to="{name:'MachineMetrics'}" tag=button class="machine-metrics">
+        Machine Metrics
+        <img src="../img/machinemetricsimg.jpg" alt="machine metrics">
+      </router-link>
     </div>
-    
   </div>
 </template>
 
@@ -170,13 +169,19 @@ button img {
   height: 155px;
 }
 .upcoming-gym-classes img{
-  top: 515px;
   
+  top: 179px;
   height: 155px;
 }
 .machine-metrics img{
-  top: 179px;
   height: 155px;
+}
+.start-workout-visible .machine-metrics img {
+  top: 179px;
+}
+
+.end-workout-visible .machine-metrics img {
+  top: 515px;
 }
 .end-workout-btn img{
   height: 158px;

@@ -314,7 +314,7 @@ textarea{
   height: 40px;
   width: 100px;
   }
-  profile{
+  .profile{
     margin-top: 80px;
   }
 
