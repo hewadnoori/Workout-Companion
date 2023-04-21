@@ -201,17 +201,22 @@ button img{
   height: 154px;
 }
 .exercise-view-button img{
-  top: 574px;
+  top: 238px
   
 }
 .upcoming-gym-classes img{
-  top: 407px;
+  top: 405px
 }
-.machine-metrics img{
-  top: 238px;
-}
+
 .machine-metrics{
   margin-bottom: 20px;
+}
+.start-workout-visible .machine-metrics img {
+  top: 238px;
+}
+
+.end-workout-visible .machine-metrics img {
+ top: 572px;
 }
 .nav  {
   position: fixed;

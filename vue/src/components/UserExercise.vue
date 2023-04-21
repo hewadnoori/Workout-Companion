@@ -3,16 +3,17 @@
     <div class="update-title">
       <h3>Your Exercises</h3>
     </div>
-    <!-- <div class="form">
+    <div class="form">
       <form @submit.prevent="submitForm" >
         <div class="box">
           <label> Select a Date </label>
           <input type="date" v-model="checkIn"/>
+          <button type="submit"> Generate Report </button>
         </div>
         
-        <button type="submit"> Generate Report </button>
-      </form> -->
-    <!-- </div> -->
+        
+      </form>
+    </div>
     
     <div v-if="exercises.length > 0" class="list">
       <ul>
@@ -85,12 +86,14 @@ export default {
   background-color: white;
   margin-bottom:10px;
   width: 100%;
+  z-index: 1;
 }
 form{
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 95%;
+  margin-bottom: 30px;
 }
 .form{
   display: flex;
@@ -103,19 +106,22 @@ form{
   justify-content: space-between;
   align-items: center;
   background-color: white;
-
+  margin-bottom: 40px;
   border-radius: 5px;
   width: 100%;
 }
 button{
+  position: absolute;
   background-color: red;
   border-radius: 20px;
   width: 200px;
   padding: 15px;
   border:none;
   color: white;
-  font-size: large ;
+  font-size: large;
   margin: 10px 0px;
+  right: 20px;
+  top:127px;
 }
 input{
   width: 60%;
@@ -167,7 +173,10 @@ input{
     padding-left: 20px;
   }
   .list{
-    margin-top: 80px;
+    margin-top: 0px;
+  }
+  form{
+    margin-top: 70px;
   }
 }
 
